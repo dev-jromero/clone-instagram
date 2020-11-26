@@ -1,3 +1,2 @@
-from django.db import models
+""" Posts models. """
 
-# Create your models here.
