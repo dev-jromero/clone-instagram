@@ -17,6 +17,7 @@ class ProfileAdmin(admin.ModelAdmin):
 
     search_fields = (
         'user__email', 
+        'user__username',
         'user__first_name',
         'user__last_name',
         'phone_number'
@@ -54,6 +55,13 @@ class ProfileInline(admin.StackedInline):
 
 class UserAdmin(BaseUserAdmin):
     inlines = (ProfileInline,)
+    list_display = (
+        'username',
+        'first_name',
+        'last_name',
+        'is_active',
+        'is_staff'
+    )
 
 
 admin.site.unregister(User)
