@@ -1,19 +1,27 @@
 {% extends "users/base.html" %}
 
 {% block head_content %}
-    <title>Instagram sign in</title>
+    <title>Instagram | sign in</title>
 {% endblock %}
 
 {% block container %}
 
     {% if error %}
-        <p style="color: red;">{{ error }}</p>
+        <p class="alert alert-danger">{{ error }}</p>
+        
     {% endif %}
     <form method="POST" action="{% url 'login' %}">
         {% csrf_token %}
+        <div class="form-group">
+            <input class="form-control" type="text" placeholder="Username" name="username">
+        </div>
 
-        <input type="text" placeholder="Username" name="username">
-        <input type="password" placeholder="Password" name="password">
-        <button type="submit">Sign In</button>
+        <div class="form-group">
+            <input class="form-control" type="password" placeholder="Password" name="password">
+        </div>
+        
+        <button class="btn btn-primary btn-block mt-3" type="submit">
+            Sign In!
+        </button>
     </form>
 {% endblock %}
