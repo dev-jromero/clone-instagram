@@ -13,7 +13,7 @@ from django.contrib.auth.models import User
 from users.models import Profile
 
 #Forms
-from users.forms import ProfileForm
+from users.forms import ProfileForm, SignUpForm
 
 
 @login_required
